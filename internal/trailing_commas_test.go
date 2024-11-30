@@ -2,6 +2,15 @@ package internal
 
 import "testing"
 
+type TestCase struct {
+	input    string
+	expected string
+}
+
+func NewUnchangedTestCase(input string) TestCase {
+	return TestCase{input: input, expected: input}
+}
+
 func TestListTrailingCommas(t *testing.T) {
 	tests := []TestCase{
 		NewUnchangedTestCase(`
